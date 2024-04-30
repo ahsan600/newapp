@@ -1,4 +1,4 @@
-# Get Your API From The https://newsapi.org/
+# Get Your API From Here https://newsapi.org/
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
