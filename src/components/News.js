@@ -13,7 +13,7 @@ export default function News(props) {
   const [checkTotalNew, setcheckTotalNew] = useState([]);
   const fetchDate = async () => {
     //Get Your Api From Here: https://newsapi.org/
-    const apiKey = "9ab42a1f91eb41a2897b21e219781749";
+    const apiKey = "";
     if (apiKey !== "") {
       props.checkprogress(10);
       let url = `https://newsapi.org/v2/top-headlines?country=us&category=${props.category}&apiKey=${apiKey}&page=${page}&pageSize=10`;
@@ -54,7 +54,7 @@ export default function News(props) {
   };
   const fetchMoreData = async () => {
     //Get Your Api From Here: https://newsapi.org/ //
-    const apiKey = "9ab42a1f91eb41a2897b21e219781749";
+    const apiKey = "";
     if (apiKey !== "") {
       const nextPage = page + 1; // Use the updated page value
       await setPage(nextPage); // Update the page state variable
