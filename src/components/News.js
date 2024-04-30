@@ -3,13 +3,14 @@ import Spinner from "./Spinner";
 import defaultImg from "./defaultimg.png";
 import React, { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { demoData } from "./demoData";
 export default function News(props) {
+  const demoDataNews = demoData;
   const [articles, setArticles] = useState([]);
   const [totalResult, setTotalResult] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [checkTotalNew, setcheckTotalNew] = useState([]);
-
   const fetchDate = async () => {
     //Get Your Api From Here: https://newsapi.org/
     const apiKey = "9ab42a1f91eb41a2897b21e219781749";
@@ -35,7 +36,12 @@ export default function News(props) {
       } else {
         props.checkprogress(100);
         await setLoading(false);
+        // 9ab42a1f91eb41a2897b21e219781749
       }
+    } else {
+      // console.log(demoDataNews.articles);
+      setArticles(demoDataNews.articles);
+      setcheckTotalNew(demoDataNews.articles);
     }
   };
   useEffect(() => {
@@ -72,6 +78,9 @@ export default function News(props) {
         ...prevArticles,
         ...praseDate.articles,
       ]);
+    } else {
+      setArticles(demoDataNews.articles);
+      setcheckTotalNew(demoDataNews.articles);
     }
   };
 
